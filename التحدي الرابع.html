@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>التحدي الرابع</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تتبع الحيوات المتبقية للاعب
+        </h1>
+        <div class="content">
+            <p>
+                احسنت في الوصول الى التحدي الرابع من بناء لعبة الجلاد في بايثون
+                في البداية سوف نضيف بعض رسومات للعبة عن طريق
+                ascii art
+                التي تم صنعها عن طريق رموز مختلفة من لوحة المفاتيح
+                وكما تلاحظ هذه الصور تمثل المراحل من لعبة الجلاد بداية من ان لديه
+                6
+                حيوات الى انتهائها جميعا تمثل ب رسم الرجل كاملا وهو معلق
+            </p>
+            <pre><code>
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+            </code></pre>
+            <p>
+                وهي عبارة عن قائمة وكل عنصر عبارة عن سلسلة حروف او
+                string
+                وسوف نقوم بطباعتها في تحدي اليوم
+            </p>
+            <p>
+                في المرحلة الاولى سوف نقوم باستعمال متغير اسمه
+                Lives
+                ونستعمله لتتبع الحيوات لدى اللاعب المتبقية و في البداية سوف تكون
+                6
+            </p>
+            <pre><code>
+#TODO-1: - Create a variable called 'lives' to keep track of the number of lives left. 
+#Set 'lives' to equal 6.
+            </code></pre>
+            <p>
+                في المرحلة الثانية سوف نقوم بالتحقق اذا لم يكن الحرف الذي حزره المستخدم
+                في الكلمة المختارة ننقص حياة من حيوات اللاعب اي ننقص
+                1
+                للمتغير
+                Lives
+                واذا انتهت جميع الحيوات اي بمعنى ان قيمة المتغير
+                lives
+                هي
+                0
+                اذن سوف ننهي اللعبة ونقوم بطباعة الجملة لقد خسرت
+                You lose.
+                اي بمعنى اخر سوف نوقف حلقة ال
+                while
+                واخباره بالنتيجة اذن الان هناك شرطان لخروج الحلقة الفوز والخسارة
+            </p>
+            <pre><code>
+#TODO-2: - If guess is not a letter in the chosen_word,
+#Then reduce 'lives' by 1. 
+#If lives goes down to 0 then the game should stop and it should print "You lose."
+
+#Join all the elements in the list and turn it into a String.
+print(f"{' '.join(display)}")
+            </code></pre>
+            <p>
+                في المرحلة الاخيرة من التحدي سوف نقوم بطباعة الرسوم من القائمة
+                stages
+                و ال
+                stage
+                اي المرحلة تمثل عدد الحيوات المتبقي لللاعب
+            </p>
+            <pre><code>
+Pssst, the solution is baboon.
+Guess a letter: a
+_ a _ _ _ _
+
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+
+Guess a letter: b
+            </code></pre>
+            <p>
+                وعندما نلعب اللعبة و نحزر جميع الحروف خطأ في كل مرة يتم رسم جزء من الرجل
+                حتى يتم رسمه كليا ويخبرنا اننا خسرنا
+            </p>
+            <pre><code>
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+ ========
+
+Guess a letter: e
+You lose.
+b a b _ _ _
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+ ========
+            </code></pre>
+            <p>
+                حظا موفقا
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

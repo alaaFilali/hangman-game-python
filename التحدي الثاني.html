@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>التحدي الثاني</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تبديل الفراغات بالحروف
+        </h1>
+        <div class="content">
+            <p>
+                والان بعدما اكملنا المرحلة الاولى لنكمل بناء اللعبة باكمال الخطوة الثانية
+                مجددا لدينا ثلاث مراحل اخرى علينا اكمالها
+                سوف نقوم بتوليد قائمة بعدد الحروف المختارة من الكلمة الرمز
+                _
+                ليمثل فراغ اي ان المستخدم لم يحزر هذا الحرف بعد فمثلا اذا كانت الكلمة
+                apple
+                فسنولد قائمة كالتالي
+                display = ["_", "_", "_", "_", "_"]
+            </p>
+            <pre><code>
+import random
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
+
+#Testing code
+print(f'Pssst, the solution is {chosen_word}.')
+
+#TODO-1: - Create an empty List called display.
+#For each letter in the chosen_word, add a "_" to 'display'.
+#So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
+            </code></pre>
+            <p>
+                في المرحلة التالية سوف نقوم بتعويض الحرف الصحيح الذي حزره المستخدم
+                في القائمة مثلا الكلمة المختارة هي
+                apple
+                والمستخدم حزر الحرف
+                p
+                النتيجة هي
+                display = ["_", "p", "p", "_", "_"]
+            </p>
+            <pre><code>
+guess = input("Guess a letter: ").lower()
+
+#TODO-2: - Loop through each position in the chosen_word;
+#If the letter at that position matches 'guess' then reveal that letter in the display at that position.
+#e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
+
+for letter in chosen_word:
+    if letter == guess:
+        print("Right")
+    else:
+        print("Wrong")        
+    </code></pre>
+            <p>
+                في المرحلة الاخيرة ببساطة سوف نقوم بطباعة القائمة
+                display
+                و يمكننا ان نراها في ال
+                console
+            </p>
+            <pre><code>
+#TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
+#Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
+            </code></pre>
+            <p>
+                ترون انه اضفت سطر يمكنني من تجربة الكود من خلال معرفة ماهي الكلمة المختارة
+                وهذا سوف يسهل الامر على كثيرا في رحلتي لبناء هذه اللعبة
+            </p>
+            <pre><code>
+#Testing code
+print(f'Pssst, the solution is {chosen_word}.')
+            </code></pre>
+            <p>
+                عندما تنهي جميع المراحل هذه هي النتيجة التي من المفروض ان تحصل عليها
+                في هذه الحالة الكملة المختارة هي
+                baboon
+                فاذا حزرت الحرف
+                b
+                فسوف يتم طباعة القائمة وتم تعويض الفراغات في القائمة بالحرف
+            </p>
+            <pre><code>
+Pssst, the solution is baboon.
+Guess a letter: b
+['b', '_', 'b', '_', '_', '_']
+            </code></pre>
+            <p>
+                عندما تصبح جاهزا حاول اكمال جميع المراحل
+                واذا اردت مساعدة او واجهت صعوبة قليلا ارجع الى نفس الموقع المشار اليه
+                في الملف السابق و اقرأ حول دالة ال
+                range
+                ذكر نفسك قليلا كيف تعمل وعد مرة اخرى للكود
+            </p>
+            <p>
+                حظا موفقا
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

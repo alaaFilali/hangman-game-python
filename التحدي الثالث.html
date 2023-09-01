@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>التحدي الثالث</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">التحقق من فوز اللاعب</h1>
+        <div class="content">
+            <p>
+                حتى الان اللعبة الخاصة بنا ليست ممتعة لان اللاعب يستطيع ان يحزر حرفا واحدا
+                فنحن نريد منه ان يحزر كل حروف الكلمة حتى يكمل اللعبة
+            </p>
+            <pre><code>
+Pssst, the solution is ardvark.
+Guess a letter: a
+['a', '_', '_', '_', 'a', '_', '_']
+Guess a letter: e
+['a', '_', '_', '_', 'a', '_', '_']
+Guess a letter: r
+['a', 'r', '_', '_', 'a', 'r', '_']
+Guess a letter: d
+['a', 'r', 'd', '_', 'a', 'r', '_']
+Guess a letter: v
+['a', 'r', 'd', 'v', 'a', 'r', '_']
+Guess a letter: k
+['a', 'r', 'd', 'v', 'a', 'r', 'k']
+You win.
+            </code></pre>
+            <p>
+                في هذه الحالة الحل هو الكلمة
+                advark
+                فسوف ابقى احزر في حروف الكلمة كلهم حتى تنتهي اللعبة والا فسوف ابقى احزر للابد
+                ويخبرني في الاخير اني قد ربحت و اللعبة تنتهي وتخرج من الحلقة
+            </p>
+            <p>
+                لتحقيق ذلك لدينا مرحلة واحدة فقط في تحدي اليوم
+            </p>
+            <pre><code>
+#TODO-1: - Use a while loop to let the user guess again. The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). Then you can tell the user they've won.
+            </code></pre>
+            <p>
+                والفكرة هنا ان تستعمل حلقة ال
+                while
+                لتجعل المستخدم يمكنه ان يحزر حرفا مرة واثنين وثلاثة
+                والحلقة تنتهي في حالة ان اللاعب قام بحزر جميع الحروف في الكلمة
+                وهذا يعني انه لايوجد فراغات
+                ("_")
+                في قائمة ال
+                display
+                وفي تلك الحالة يمكنك اخباره انه ربح اللعبة
+            </p>
+            <p>
+                مجددا
+                <a href="https://developers.google.com/edu/python/lists#for-and-in">اضغط هنا</a>
+                وهو نفس الموقع الذي اشير اليه سابقا واقرأ قليلا حول الحلقات وذكر نفسك
+                بما تحتاجه لحل هذا التحدي و كمساعدة اقرأ حول الكلة المفتاحية
+                in
+                في بايثون واستعمالاتها
+                و شيئ اخر وهو النفي في بايثون باستعمال ال
+                not
+                وكيف تعمل حلقة ال
+                while
+                و كيف تجعل جزء من الكود الخاص بك يعيد نفسه مرارا وتكرارا حتى يختل شرط ما
+                و في هذه الحالة هذا الشرط هو انه لايوجد فراغات في قائمة ال
+                display
+            </p>
+            <p>
+                لا تقلق حول معاقبة اللاعب لاجاباته الخاطئة سوف نفعل ذلك في التحديات القادئمة
+                ركز فقط على اكمال تحدي اليوم
+            </p>
+            <p>
+                حظا موفقا
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

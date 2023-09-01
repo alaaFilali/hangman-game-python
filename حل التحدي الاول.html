@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>حل التحدي الاول</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">كيفية التحقق من اجابات المستخدم</h1>
+        <div class="content">
+            <p>
+                اذا لم تستطع حل التحدي او واجهتك صعوبة نوعا ما اكمل معي و سوف اقوم بحل التحدي
+                معك
+            </p>
+            <p>
+                اول سوف نقوم بالبدأ ب الخطوة الاولى وهو يخبرنا بان نختار كلمة من قائمة الكلمات
+                عشوائيا ونخزنها في متغير ولفعل ذلك نحتاج ان نقوم ب عمل
+                import
+                لمكتبة
+                random
+                و بعدها يمكننا استخدام ال
+                methode .choice
+                ونعطيها القائمة التي نريد ان نختار منها عنصرا عشوائيا
+                واخيرا نخزنه في متغير نسميه
+                chosen_word
+                باستخدام علامة ال
+                =
+            </p>
+            <pre><code>
+import random
+chosen_word = random.choice(word_list)
+            </code></pre>
+            <p>
+                في الخطوة الثانية يخبرنا بان نخبر المستخدم ان يحزر حرفا ونقوم بتخزينه
+                في متغير وايضا نجعله
+                lowercase
+                يعني حرف صغير.
+                لسؤال المستخدم اي شيئ نستعمل ال
+                input function
+                ونخبره مثلا احزر حرفا
+                ونخزنه في متغير نسميه
+                guess
+                و اخيرا نجعل
+                guess
+                حرفا صغيرا
+                باستعمال
+                .lower()
+            </p>
+            <pre><code>
+guess = input("Guess a letter: ").lower()
+            </code></pre>
+            <p>
+                في الخطوة الثالثة يخبرنا ان نتحقق ان كان الحرف الذي اختاره المستخدم
+                guess
+                هو واحد من حروف الكلمة المختارة
+                chosen_word
+                يمكنك القراءة حول الشيء بالتحديد في الموقع الذي تم الاشارة اليه
+                في الملف السابق وهو استعمال حلقة ال
+                for
+                مع القوائم في بايثون
+                بحيث يمكنك ان تدور حول قائمة في بايثون وتفعل شيئا ما بكل عنصر بهذه الطريقة
+            </p>
+            <pre><code>
+squares = [1, 4, 9, 16]
+sum = 0
+for num in squares:
+    sum += num
+print(sum)
+            </code></pre>
+            <p>
+                في حالتنا نضع حلقة تدوى حول ال
+                chosen_word
+                حرفا بحرف
+                وداخل الحلقة نتحقق ان كان الحرف الذي نحن عنده مطابق للحرف الذي ادخله
+                المستخدم في تلك الحالة نقوم بطباعة الكلمة
+                right
+                وفي الحالة الاخرى
+                wrong
+            </p>
+            <pre><code>
+for letter in chosen_word:
+    if letter == guess:
+        print("Right")
+    else:
+        print("Wrong")
+            </code></pre>
+            <p>
+                وهذا ما نحتاجه لاكمال جميع خطوات التحدي الاول
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

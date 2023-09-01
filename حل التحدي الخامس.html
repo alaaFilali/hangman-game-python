@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>حل التحدي الخامس</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">
+            كيف تضيف
+            ascii art
+            و تحسن واجهة المستخدم
+        </h1>
+        <div class="content">
+            <p>
+                دعونا نكمل اللعبة الخاصة بنا في هذا التحدي الخامس والاخير
+            </p>
+            <p>
+                في المرحلة الاولى سوف نقوم بجعل قائمة
+                world_list
+                تستعمل القائمة الطويلة من الكلمات في الملف المضاف بدل الثلاث كلمات السابقة
+                حتى ان القائمة في الملف المضاف تحمل نفس الاسم
+                world_list
+                اذن لن نحتاج لتغيير الكثير
+                سوف نقوم بعمل
+                import
+                لملف
+                hangman_words
+                عن طريق ال
+                keyword
+                import
+                كما راينا في الدروس السابقة
+                ثم استعمال النقطة بحيث نكتب اسم الملف ثم نقطة اسم القائمة
+            </p>
+            <pre><code>
+import hangman_words
+chosen_word = random.choice(hangman_words.word_list)
+word_length = len(chosen_word)
+            </code></pre>
+            <p>
+                يمكنك ان تكون اكثر دقة في استيرادك لملفات اخرى بحيث انت تعرف بالضبط المتغير
+                او الدالة او في حالتنا القائمة بحيث تقول من الملف الفلاني قم بعمل
+                import
+                للقائمة الفلانية مثلا ولن تحتاج لاستعمال النقطة في هذه الحالة بل استعمله مباشرة
+            </p>
+            <pre><code>
+from hangman_words import word_list
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+            </code></pre>
+            <p>
+                بنفس الطريقة مع المرحلة الثانية حيث نقوم بطباعة الصور من الملف
+                hangman_art
+                من
+                hangman_art
+                نقوم بعمل
+                import
+                لقائمة الصور
+                stages
+                وهذا سوف يذهب الخطأ من الكود الخاص بنا
+            </p>
+            <pre><code>
+    from hangman_art import stages
+    print(stages[lives])
+            </code></pre>
+            <p>
+                بنفس الطريقة مع المرحلة الثالثة
+                عمل
+                import
+                للوغو الخاص باللعبة من ملف
+                hangman_art
+                وطباعته ببساطة
+            </p>
+            <pre><code>
+from hangman_art import logo
+print(logo)
+            </code></pre>
+            <p>
+                لاحظ اننا نقوم بعمل
+                Import
+                لشئين مختلفين من نفس الملف فاذا اردت يمكنك عمل
+                import
+                لهما في نفس السطر وليس تكرار السطر وسوف يعمل الكود كما هو متوقع من دون
+                ان نقوم بتكرار كتابة الكود في مكانين مختلفين في نفس الملف
+                و لاتنسى ان تفصل بينهم بفاصلة
+            </p>
+            <pre><code>
+from hangman_art import logo, stages
+            </code></pre>
+            <p>
+                في المرحلة الرابعة سوف نتحقق ما ان ادخل المستخدم حرفا قد ادخله من قبل
+                وهو حرف صحيح موجود في الكلمة المختارة فسوف نخبره بذلك وسوف نفعل ذلك
+                من خلال التحقق من قائمة
+                display
+                التي تحتوي على الحروف التي حزرها اللاعب
+                ونكتب اذا كان الحرف الذي حزره اللاعب في قائمة
+                display
+                سوف نقوم بطباعة الجملة لقد قمت بالفعل بادخال هذا الحرف من قبل
+            </p>
+            <pre><code>
+    if guess in display:
+        print(f"You've already guessed {guess}")
+            </code></pre>
+            <p>
+                في المرحلة الاخيرة نتحقق ما ان لم يكن الحرف الذي ادخله المستخدم ليس في
+                الكلمة المختارة سوف نقوم بطباعة الجملة التالية: لقد قمت باختبار حرف ليس في الكلمة
+                لقد خسرت حياة
+            </p>
+            <pre><code>
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+            </code></pre>
+            <p>
+                هنا نصل الى نهاية اللعبة الخاصة بنا وسوف تكون جاهزة لتلعبها مع اصدقائك وتجربها
+                وتكون فخور بنفسك لانك قمت ببرمجتها بنفسك
+                و لاتنسى ان تقوم بحذف الاجزاء التي تقوم بطباعة الحل من الكود الخاص بك
+                لانك انهيت برمجة اللعبة ولا تحتاجها بعد الان لانها تعتبر غشا
+            </p>
+            <p>
+                الكود كاملا للعبة: مع وجود الملفات
+                hangman_art
+                و 
+                hangman_words
+                في نفس المجلد مع ملف الكود
+            </p>
+            <pre><code>
+import random
+
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+
+end_of_game = False
+lives = 6
+
+print(logo)
+
+display = []
+for _ in range(word_length):
+    display += "_"
+
+while not end_of_game:
+    guess = input("Guess a letter: ").lower()
+
+    if guess in display:
+        print(f"You've already guessed {guess}")
+
+    for position in range(word_length):
+        letter = chosen_word[position]
+        if letter == guess:
+            display[position] = letter
+
+    if guess not in chosen_word:
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+        
+        lives -= 1
+        if lives == 0:
+            end_of_game = True
+            print("You lose.")
+
+    print(f"{' '.join(display)}")
+
+    if "_" not in display:
+        end_of_game = True
+        print("You win.")
+
+    print(stages[lives])
+            </code></pre>
+            <p>
+                ونلتقي في دروس اخرى ان شاء الله
+            </p>
+            <p>
+                مع السلامة
+            </p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

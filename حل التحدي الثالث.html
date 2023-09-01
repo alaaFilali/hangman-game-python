@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>حل التحدي الثالث</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">كيف تتحقق من ان اللاعب قد فاز؟
+        </h1>
+        <div class="content">
+            <p>
+                مرحبا بك في حل التحدي الثالث اتمنى انك قمت بحل التحدي وجئت لتتحقق من الكود الخاص بي
+            </p>
+            <p>
+                نحن نعرف ان الجزء الذي عليه ان يتكرر في الكود الخاص بنا هو هذا الجزء
+            </p>
+            <pre><code>
+guess = input("Guess a letter: ").lower()
+
+#Check guessed letter
+for position in range(word_length):
+    letter = chosen_word[position]
+    print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+    if letter == guess:
+        display[position] = letter
+
+print(display)
+            </code></pre>
+            <p>
+                حيث فيه نحن نسأل اللاعب ان يحزر الحرف
+                اذن ماعليها فعله هو وضعه في حلقة
+                while
+                من خلال اضافة فراغ
+                indentation
+                للكل الاسطر للدلالة على انها تنتمي للحلقة
+                <br>
+                <br>
+                ولكن ماهو شرط الحلقة؟
+                نحن نعرف ان الحلقة يجب ان تنتهي عندما لايوجد فراغات في القائمة
+                display
+                سوف نعرف متغيرا نسميه
+                end_of_game
+                وقيمته الابتدائية هي
+                False
+                ونضعه كشرط في الحلقة الخاصة بنا من خلال نفيه
+            </p>
+            <p>
+                تذكر انه لكي تتنفذ الحلقة باستمرار يجب ان يكون شرطها
+                True
+                و الشرط الذي وضعناه قيمته
+                False
+                لذلك قمنا بنفيه وهذا ما سيجعل الحلقة الخاص بنا تستمر في التنفيذ
+            </p>
+            <pre><code>
+end_of_game = False
+
+while not end_of_game:
+    guess = input("Guess a letter: ").lower()
+
+    #Check guessed letter
+    for position in range(word_length):
+        letter = chosen_word[position]
+        print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        if letter == guess:
+            display[position] = letter
+
+    print(display)
+            </code></pre>
+            <p>
+                لو شغلنا اللعبة الخاصة بنا الان سوف تعمل الى الابد وسيبقى اللاعب يحزر في الحروف الى الابد
+                لانه لم نقم بقلب قيمة المتغير
+                end_of_game
+                في اي جزء من الكود الخاص بنا
+                اذن اين نقوم بقلب قيمته؟
+                في اخر حلقة ال
+                while
+                فنقول اذا كان
+                "_"
+                غير موجود في
+                display
+                ونستعمل هنا الكلمة
+                in
+                وهي تخولنا التحقق من عنصر ان كان ينتمي في قائمة او لا
+                في تلك الحالة نقوم بقلب قيمة
+                end_of_game
+                الى
+                True
+                وهو مايجعل الحلقة تتوقف
+                وسوف نقوم بطباعة ان اللاعب قد ربح
+            </p>
+            <pre><code>
+end_of_game = False
+
+while not end_of_game:
+    guess = input("Guess a letter: ").lower()
+
+    #Check guessed letter
+    for position in range(word_length):
+        letter = chosen_word[position]
+        #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        if letter == guess:
+            display[position] = letter
+
+    print(display)
+
+    #Check if there are no more "_" left in 'display'. Then all letters have been guessed.
+    if "_" not in display:
+        end_of_game = True
+        print("You win.")
+            </code></pre>
+            <p>
+                نلتقي في الجهة الاخرى حيث سنقوم بحل تحدي اخر ان شاء الله
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
